@@ -23,9 +23,9 @@ function FlashcardDetailsPage() {
 
   return (
     <>
-      <div className="w-full bg-pink-50 flex items-center flex-col">
-        <div className="w-11/12 my-8 mb-16 px-8">
-          <div className="mt-4 flex">
+      <div className="w-full h-[100vh] mb-16 px-8 bg-pink-50 flex items-center flex-col">
+        <div className="w-11/12 my-4 mb-16 px-8">
+          <div className="flex">
             <label className="">
               {/* <svg
                 className="h-8 w-8 text-red-500"

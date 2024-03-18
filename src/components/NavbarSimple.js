@@ -18,7 +18,7 @@ function NavList() {
         className="p-1 font-bold"
       >
         <Link
-          to="/CreateFlashcardPage"
+          to="/flashcard-generator/"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
           Create New
@@ -31,7 +31,7 @@ function NavList() {
         className="p-1 font-bold"
       >
         <Link
-          to="/MyFlashcardsPage"
+          to="/flashcard-generator/MyFlashcardsPage"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
           My Flashcard
@@ -58,7 +58,10 @@ export default function NavbarSimple() {
   return (
     <Navbar className="mx-auto max-w-screen-xl px-6 py-1 text-2xl rounded-none shadow-none">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <Link to="/" className="mr-4 cursor-pointer py-1.5 font-bold">
+        <Link
+          to="/flashcard-generator/"
+          className="mr-4 cursor-pointer py-1.5 font-bold"
+        >
           Flashcard Generator
         </Link>
         <div className="hidden lg:block">

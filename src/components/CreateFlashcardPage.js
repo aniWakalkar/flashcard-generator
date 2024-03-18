@@ -106,7 +106,7 @@ function CreateFlashcardPage() {
             Please Fill in All the required fields.
           </p>
         </div>
-        <div className="w-9/12 my-6 mb-16 px-8">
+        <div className="w-10/12 my-4 mb-16 px-8">
           <Card className="mt-6">
             <CardBody>
               <div className="flex items-center">
