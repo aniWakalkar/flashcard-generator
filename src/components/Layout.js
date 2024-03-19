@@ -6,7 +6,7 @@ import MyFlashcardsPage from "./MyFlashcardsPage";
 import NavbarSimple from "./NavbarSimple";
 function Layout() {
   return (
-    <Router>
+    <Router className="bg-[#ffc0cb0d]">
       <NavbarSimple />
       <Routes>
         <Route

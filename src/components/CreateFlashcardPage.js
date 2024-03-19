@@ -90,11 +90,12 @@ function CreateFlashcardPage() {
     setTimeout(() => {
       setRequired_Field(false);
     }, 3000);
+    localStorage.setItem("flashCards", JSON.stringify(all_data));
   }, [all_data, required_field]);
 
   return (
     <>
-      <div className="w-full bg-pink-50 flex items-center flex-col">
+      <div className="w-full flex items-center flex-col">
         <div className="text-red-500 flex items-center justify-end w-full my-2">
           <p
             className={
@@ -106,8 +107,8 @@ function CreateFlashcardPage() {
             Please Fill in All the required fields.
           </p>
         </div>
-        <div className="w-10/12 my-4 mb-16 px-8">
-          <Card className="mt-6">
+        <div className="w-10/12 my-4 mb-16 p-8 border border-gray-300 bg-pink-50">
+          <Card className="mt-6 border border-gray-300">
             <CardBody>
               <div className="flex items-center">
                 <div className="w-72">
@@ -153,7 +154,7 @@ function CreateFlashcardPage() {
               </div>
             </CardBody>
           </Card>
-          <Card className="mt-6">
+          <Card className="mt-6 border border-gray-300">
             <CardBody>
               {form_2.length > 0 &&
                 form_2.map((value, index) => {

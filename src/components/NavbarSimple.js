@@ -56,7 +56,7 @@ export default function NavbarSimple() {
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-6 py-1 text-2xl rounded-none shadow-none">
+    <Navbar className="mx-auto max-w-screen-xl px-6 py-1 text-2xl rounded-none">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Link
           to="/flashcard-generator/"
