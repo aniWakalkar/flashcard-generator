@@ -5,15 +5,26 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
-import React from "react";
-// import { CgProfile } from "react-icons/cg";
+import React, { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function MyFlashcardsPage() {
   const navigate = useNavigate();
   // const all_data = useSelector((state) => state.all_data);
-  const flashCards = JSON.parse(localStorage.getItem("flashCards"));
+  const [flashCards, setFlashCards] = useState(
+    JSON.parse(localStorage.getItem("flashCards"))
+      ? JSON.parse(localStorage.getItem("flashCards"))
+      : []
+  );
+
+  useEffect(() => {
+    if (!flashCards) {
+      localStorage.setItem("flashCards", JSON.stringify([]));
+      setFlashCards(JSON.parse(localStorage.getItem("flashCards")));
+    }
+    console.log(flashCards);
+  }, [flashCards]);
 
   return (
     <>
@@ -27,7 +38,6 @@ function MyFlashcardsPage() {
                     className="mt-16 w-[250px] mx-1 text-center rounded-md"
                     key={index}
                   >
-                    {/* <CgProfile className="h-12 w-12 mx-auto mt-[-18px] bg-gray-300 rounded-xl" /> */}
                     <img
                       src={
                         value.form_1.imagePreview

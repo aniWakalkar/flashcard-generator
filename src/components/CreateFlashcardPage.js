@@ -67,6 +67,10 @@ function CreateFlashcardPage() {
   const handle_all_data = () => {
     if (form_1.group_name !== "" && form_1.description !== "") {
       dispatch(handle_store({ form_1: form_1, form_2: form_2 }));
+      localStorage.setItem(
+        "flashCards",
+        JSON.stringify([...all_data, { form_1: form_1, form_2: form_2 }])
+      );
     } else {
       setRequired_Field(true);
     }
@@ -90,24 +94,23 @@ function CreateFlashcardPage() {
     setTimeout(() => {
       setRequired_Field(false);
     }, 3000);
-    localStorage.setItem("flashCards", JSON.stringify(all_data));
   }, [all_data, required_field]);
 
   return (
     <>
       <div className="w-full flex items-center flex-col">
-        <div className="text-red-500 flex items-center justify-end w-full my-2">
-          <p
-            className={
-              required_field
-                ? "display p-2 border border-red-400 w-fit"
-                : "invisible"
-            }
-          >
-            Please Fill in All the required fields.
-          </p>
-        </div>
-        <div className="w-10/12 my-4 mb-16 p-8 border border-gray-300 bg-pink-50">
+        <div className="w-10/12 my-14 p-8 border border-gray-300 bg-pink-50">
+          <div className="text-red-500 flex items-center justify-end w-full">
+            <p
+              className={
+                required_field
+                  ? "display p-2 border border-red-400 w-fit"
+                  : "hidden"
+              }
+            >
+              Please Fill in All the required fields.
+            </p>
+          </div>
           <Card className="mt-6 border border-gray-300">
             <CardBody>
               <div className="flex items-center">
@@ -231,7 +234,7 @@ function CreateFlashcardPage() {
             </CardBody>
           </Card>
           <Button
-            className="rounded-md mt-6 w-44 text-white font-extrabold border border-gray-400 bg-red-600 hover:border-red-600"
+            className="rounded-md mt-6 w-44 text-white font-extrabold border border-gray-700 bg-red-600 hover:border-red-600 hover:text-red-500"
             variant="text"
             onClick={handle_all_data}
           >
