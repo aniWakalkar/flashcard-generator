@@ -31,7 +31,10 @@ function FlashcardDetailsPage() {
   return (
     <>
       <div className="w-full mb-16 px-14 flex items-center flex-col">
-        <div className="w-11/12 my-14 px-16 py-8 border border-gray-300 bg-pink-50">
+        <div
+          className="w-11/12 my-14 px-16 py-8 border border-gray-300 bg-pink-50"
+          style={{ width: "85%" }}
+        >
           <div className="mx-6 my-2">
             <p className="font-bold">
               {flashCards[id]["form_1"].group_name.toUpperCase()}
