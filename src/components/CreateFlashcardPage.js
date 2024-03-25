@@ -196,7 +196,7 @@ function CreateFlashcardPage() {
                       <label className="p-2 w-40 flex items-center justify-between bg-white text-blue border border-blue-gray-200 rounded-md hover:bg-gray-200">
                         <MdCloudUpload className="h-6 w-6" />
                         <span className="leading-normal">Upload Image</span>
-                        <input type="file" className="hidden" />
+                        <input type="file" className="hidden" disabled />
                       </label>
 
                       {/* Terms Editor */}

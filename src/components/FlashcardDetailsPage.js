@@ -36,7 +36,7 @@ function FlashcardDetailsPage() {
           style={{ width: "85%" }}
         >
           <div className="mx-6 my-2">
-            <p className="font-bold">
+            <p className="text-xl font-normal">
               {flashCards[id]["form_1"].group_name.toUpperCase()}
             </p>
             <p className="my-4">{flashCards[id]["form_1"].description}</p>
@@ -47,22 +47,23 @@ function FlashcardDetailsPage() {
               <CardBody>
                 <ul>
                   <li>
-                    <Typography className="mb-1 text-[#6f6b6b]">
+                    <Typography className="mb-1 text-[#6f6b6b] text-xl font-normal  p-1 text-center">
                       Flashcard
                     </Typography>
                   </li>
-                  <hr className="border border-black" />
+                  <hr className="border border-black mb-3" />
                   {flashCards[id]["form_2"].length > 0 ? (
                     flashCards[id]["form_2"].map((value, index) => {
                       return (
-                        <li key={index}>
+                        <li key={index} className="my-1">
                           <Typography
-                            className="my-2 font-medium text-red-500 cursor-pointer"
+                            className="text-xl font-normal text-red-500 cursor-pointer hover:bg-blue-gray-50 p-1 px-2"
                             onClick={() => {
                               setDefination(value["defination"]);
                             }}
                           >
-                            {value["term_title"]}
+                            {value["term_title"].slice(0, 1).toUpperCase() +
+                              value["term_title"].slice(1)}
                           </Typography>
                         </li>
                       );

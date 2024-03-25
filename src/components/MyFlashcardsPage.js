@@ -35,7 +35,7 @@ function MyFlashcardsPage() {
               flashCards.map((value, index) => {
                 return (
                   <Card
-                    className="mt-16 w-[250px] mx-1 text-center rounded-md"
+                    className="mt-16 h-[250px] w-[250px] mx-1 text-center rounded-md"
                     key={index}
                   >
                     <img
@@ -47,18 +47,18 @@ function MyFlashcardsPage() {
                       alt="title"
                       className="h-12 w-12 mx-auto mt-[-18px] bg-gray-300 rounded-xl"
                     />
-                    <CardBody>
+                    <CardBody className="" style={{ overflow: "hidden" }}>
                       <Typography
                         variant="h5"
                         color="blue-gray"
                         className="mb-2 font-extrabold"
                       >
-                        {value.form_1.group_name}
+                        {value.form_1.group_name.slice(0, 20) + "..."}
                       </Typography>
-                      <Typography>
-                        {value.form_1.description.slice(0, 150) + "..."}
+                      <Typography style={{ overflow: "hidden" }}>
+                        {value.form_1.description.slice(0, 80) + "..."}
                       </Typography>
-                      <Typography className="font-bold">9 Cards</Typography>
+                      {/* <Typography className="font-bold">9 Cards</Typography> */}
                     </CardBody>
                     <CardFooter className="pt-0">
                       <Button
