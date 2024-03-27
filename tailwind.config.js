@@ -5,14 +5,14 @@ module.exports = withMT({
   theme: {
     extend: {},
     // screens: {
-    //   sm: "300px",
-    //   // => @media (min-width: 640px) { ... }
+    // sm: "640",
+    // => @media (min-width: 640px) { ... }
 
-    //   md: "1477px",
-    //   // => @media (min-width: 768px) { ... }
+    // md: "768",
+    // => @media (min-width: 768px) { ... }
 
-    //   lg: "1920px",
-    //   // => @media (min-width: 1024px) { ... }
+    // lg: "1920px",
+    // => @media (min-width: 1024px) { ... }
     // },
   },
   plugins: [],
